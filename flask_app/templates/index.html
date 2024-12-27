@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Generator</title>
+    <!--<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">-->
+</head>
+<body>
+    <h1>AI Email Generator with Groq</h1>
+
+    <form method="POST">
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" required><br><br>
+
+        <label for="context">Context:</label><br>
+        <textarea id="context" name="context" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Generate Email">
+    </form>
+
+    {% if generated_email %}
+    <h3>Generated Email</h3>
+    <p>{{ generated_email }}</p>
+    {% endif %}
+
+</body>
+</html>
